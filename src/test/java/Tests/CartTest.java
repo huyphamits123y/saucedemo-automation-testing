@@ -1,0 +1,112 @@
+package Tests;
+
+import Base.BaseTest;
+import Pages.CartPage;
+import Pages.HomePage;
+import Pages.LoginPage;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.io.FileHandler;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class CartTest {
+    HomePage homePage;
+    LoginPage loginPage;
+    CartPage cartPage;
+    @BeforeClass
+    public void setUp(){
+        BaseTest.setDriver("chrome");
+    }
+    @BeforeClass(dependsOnMethods = "setUp")
+    public void loginBeforeTests() throws InterruptedException {
+        loginPage = new LoginPage();
+        loginPage.open();
+        Assert.assertTrue(loginPage.isLoginSuccess("standard_user", "secret_sauce"));
+
+    }
+    @BeforeClass(dependsOnMethods = "loginBeforeTests")
+    public void SwitchToCartBeforeTests() throws InterruptedException {
+        homePage = new HomePage();
+        homePage.isAddProductSuccess("Sauce Labs Backpack");
+        homePage.switchToCart();
+        cartPage = new CartPage();
+    }
+    @Test(priority = 1)
+    public void verifyLinkCart(){
+        Assert.assertTrue(cartPage.verifyCartPage());
+    }
+    @Test(priority = 2)
+    public void verifyListItemsAdded(){
+        Assert.assertTrue(cartPage.verifyListItemsAtCart());
+
+    }
+
+
+    @Test(priority = 3)
+    public void removeProductSuccessfully(){
+
+        Assert.assertTrue(cartPage.isRemoveProductSuccess("Sauce Labs Backpack"));
+
+    }
+    @Test(priority = 4)
+    public void verifyBackToHomePage(){
+        System.out.println("page hien tai" + BaseTest.driver.getCurrentUrl());
+        cartPage.BackToHomePage();
+        Assert.assertTrue(BaseTest.driver.getCurrentUrl().contains("https://www.saucedemo.com/inventory.html"));
+
+    }
+    @AfterMethod
+    public void takeScreenshot(ITestResult result) {
+        System.out.println("take");
+         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
+        // Khởi tạo đối tượng result thuộc ITestResult để lấy trạng thái và tên của từng Step
+        // Ở đây sẽ so sánh điều kiện nếu testcase(@Test) passed hoặc failed
+        // passed = SUCCESS và failed = FAILURE
+        BaseTest.waitForPageLoaded();
+        if (ITestResult.FAILURE == result.getStatus()) {
+            try {
+                // Tạo tham chiếu của TakesScreenshot
+                TakesScreenshot ts = (TakesScreenshot) BaseTest.driver;
+                // Gọi hàm capture screenshot - getScreenshotAs
+                File source = ts.getScreenshotAs(OutputType.FILE);
+                //Kiểm tra folder tồn tại. Nêu không thì tạo mới folder
+                File theDir = new File("./Screenshots/");
+                if (!theDir.exists()) {
+                    theDir.mkdirs();
+                }
+                // result.getName() lấy tên của test case xong gán cho tên File chụp màn hình
+                FileHandler.copy(
+                        source,
+                        new File(String.format(
+                                "./Screenshots/%s-%s-%s.png",
+                                result.getName(),
+                                dateFormat.format(new Date()),
+                                System.currentTimeMillis()
+                        ))
+                );
+
+                System.out.println("Đã chụp màn hình: " + result.getName());
+            } catch (Exception e) {
+                System.out.println("Exception while taking screenshot " + e.getMessage());
+            }
+        }
+    }
+    @AfterMethod
+    public void he(){
+        System.out.println("huy");
+    }
+
+    @AfterClass
+    public void teardown(){
+        BaseTest.quit();
+    }
+}

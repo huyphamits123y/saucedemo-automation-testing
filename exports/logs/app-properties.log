@@ -1,0 +1,82 @@
+[INFO] 09-02-2026 12:46:27 [main] Utils - [TestNG] Running:
+  C:\Users\PC\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+[INFO] 09-02-2026 12:46:27 [main] LogUtils - Bắt đầu AUTOTEST
+[INFO] 09-02-2026 12:46:31 [main] LogUtils - Đây là testcase thành côngLoginFailedWithEmptyUsernameTestcase
+[INFO] 09-02-2026 12:46:33 [main] LogUtils - Đây là testcase thành côngLoginFailedWithEmptyPasswordTestcase
+[INFO] 09-02-2026 12:46:34 [main] LogUtils - Đây là testcase thành côngLoginFailedWithInvalidCredentialsTestcase
+[INFO] 09-02-2026 12:46:35 [main] LogUtils - Đây là testcase thành côngLoginSuccessTestcase
+[INFO] 09-02-2026 12:46:35 [main] LogUtils - Kết thúc AUTOTEST
+[INFO] 09-02-2026 13:06:37 [main] Utils - [TestNG] Running:
+  C:\Users\PC\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+[INFO] 09-02-2026 13:06:37 [main] LogUtils - Bắt đầu AUTOTEST
+[INFO] 09-02-2026 13:06:42 [main] LogUtils - Đây là testcase thành côngLoginFailedWithEmptyUsernameTestcase
+[INFO] 09-02-2026 13:06:44 [main] LogUtils - Đây là testcase thành côngLoginFailedWithEmptyPasswordTestcase
+[INFO] 09-02-2026 13:06:47 [main] LogUtils - Đây là testcase thành côngLoginFailedWithInvalidCredentialsTestcase
+[INFO] 09-02-2026 13:06:49 [main] LogUtils - Đây là testcase thành côngLoginSuccessTestcase
+[INFO] 09-02-2026 13:06:51 [main] LogUtils - Kết thúc AUTOTEST
+[INFO] 09-02-2026 13:14:03 [main] Utils - [TestNG] Running:
+  C:\Users\PC\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+[INFO] 09-02-2026 13:14:27 [main] Utils - [TestNG] Running:
+  C:\Users\PC\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+[INFO] 09-02-2026 13:15:35 [main] Utils - [TestNG] Running:
+  C:\Users\PC\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+[INFO] 09-02-2026 13:16:34 [main] Utils - [TestNG] Running:
+  C:\Users\PC\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+[INFO] 09-02-2026 13:17:46 [main] Utils - [TestNG] Running:
+  C:\Users\PC\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+[INFO] 09-02-2026 13:21:22 [main] Utils - [TestNG] Running:
+  C:\Users\PC\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+[INFO] 09-02-2026 13:24:50 [main] Utils - [TestNG] Running:
+  C:\Users\PC\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+[INFO] 09-02-2026 13:25:30 [main] Utils - [TestNG] Running:
+  C:\Users\PC\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+[INFO] 09-02-2026 13:28:39 [main] Utils - [TestNG] Running:
+  C:\Users\PC\AppData\Local\JetBrains\IntelliJIdea2025.3\temp-testng-customsuite.xml
+
+[WARN] 09-02-2026 13:31:41 [main] TestNGContentHandler - It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >" at the top of the suite file [C:\java\saucedemo-automation-testing\testng.xml] otherwise TestNG may fail or not work as expected.
+[INFO] 09-02-2026 13:31:42 [main] Utils - [TestNG] Running:
+  C:\java\saucedemo-automation-testing\testng.xml
+
+[INFO] 09-02-2026 13:31:42 [main] LogUtils - Bắt đầu AUTOTEST
+[INFO] 09-02-2026 13:31:46 [main] LogUtils - Đây là testcase thành côngLoginFailedWithEmptyUsernameTestcase
+[INFO] 09-02-2026 13:31:48 [main] LogUtils - Đây là testcase thành côngLoginFailedWithEmptyPasswordTestcase
+[INFO] 09-02-2026 13:31:51 [main] LogUtils - Đây là testcase thành côngLoginFailedWithInvalidCredentialsTestcase
+[INFO] 09-02-2026 13:31:53 [main] LogUtils - Đây là testcase thành côngLoginSuccessTestcase
+[INFO] 09-02-2026 13:31:57 [main] LogUtils - Đây là testcase thành côngaddProductSuccessfully
+[ERROR] 09-02-2026 13:31:58 [main] LogUtils - Đây là testcase thất bạiremoveProductSuccessfully
+[INFO] 09-02-2026 13:31:59 [main] LogUtils - Đây là testcase thành côngcheckSelectedSearchSuccessfully
+[INFO] 09-02-2026 13:32:01 [main] LogUtils - Đây là testcase thành côngcheckSearchSuccessfully
+[INFO] 09-02-2026 13:32:04 [main] LogUtils - Đây là testcase thành côngverifyBrokenImages
+[INFO] 09-02-2026 13:32:11 [main] LogUtils - Đây là testcase thành côngverifyLinkTwitter
+[INFO] 09-02-2026 13:32:15 [main] LogUtils - Đây là testcase thành côngverifyLinkFaceBook
+[INFO] 09-02-2026 13:32:18 [main] LogUtils - Đây là testcase thành côngverifyLinkLinkedin
+[INFO] 09-02-2026 13:32:22 [main] LogUtils - Đây là testcase thành côngverifyLinkAbout
+[INFO] 09-02-2026 13:32:23 [main] LogUtils - Đây là testcase thành côngverifyLinkAllItems
+[INFO] 09-02-2026 13:32:24 [main] LogUtils - Đây là testcase thành côngverifyLinkLogout
+[INFO] 09-02-2026 13:32:28 [main] LogUtils - Đây là testcase thành côngverifyLinkCart
+[INFO] 09-02-2026 13:32:29 [main] LogUtils - Đây là testcase thành côngverifyListItemsAdded
+[INFO] 09-02-2026 13:32:35 [main] LogUtils - Đây là testcase thành côngremoveProductSuccessfully
+[INFO] 09-02-2026 13:32:37 [main] LogUtils - Đây là testcase thành côngverifyBackToHomePage
+[INFO] 09-02-2026 13:32:46 [main] LogUtils - Đây là testcase thành côngverifyProductDetailsAtCart
+[INFO] 09-02-2026 13:32:53 [main] LogUtils - Đây là testcase thành côngremoveProductSuccessfullyAtCart
+[INFO] 09-02-2026 13:32:56 [main] LogUtils - Đây là testcase thành côngverifyBackToProduct
+[INFO] 09-02-2026 13:33:02 [main] LogUtils - Đây là testcase thành côngverifyOpenPayment
+[INFO] 09-02-2026 13:33:04 [main] LogUtils - Đây là testcase thành côngisEnteredWithEmptyFirstName
+[INFO] 09-02-2026 13:33:08 [main] LogUtils - Đây là testcase thành côngisEnteredWithEmptyLastName
+[INFO] 09-02-2026 13:33:11 [main] LogUtils - Đây là testcase thành côngisEnteredWithEmptyPostTalCode
+[INFO] 09-02-2026 13:33:15 [main] LogUtils - Đây là testcase thành côngisEnteredSuccessfully
+[INFO] 09-02-2026 13:33:16 [main] LogUtils - Đây là testcase thành côngverifyItemListAtPayment
+[INFO] 09-02-2026 13:33:17 [main] LogUtils - Đây là testcase thành côngverifyTotalPrice
+[INFO] 09-02-2026 13:33:18 [main] LogUtils - Đây là testcase thành côngverifyCheckoutSuccessfully
+[INFO] 09-02-2026 13:33:20 [main] LogUtils - Đây là testcase thành côngverifyBackToHome
+[INFO] 09-02-2026 13:33:21 [main] LogUtils - Kết thúc AUTOTEST

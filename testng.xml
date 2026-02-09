@@ -1,0 +1,26 @@
+<suite name="selenium">
+        <listeners>
+            <listener class-name="Base.TestListener"></listener>
+        </listeners>
+    <test name="browser">
+        <classes>
+
+            <class name="Tests.LoginTest">
+
+            </class>
+            <class name="Tests.HomeTest">
+
+            </class>
+            <class name="Tests.CartTest">
+
+            </class>
+            <class name="Tests.ProductTest">
+
+            </class>
+            <class name="Tests.PaymentTest">
+
+            </class>
+
+        </classes>
+    </test>
+</suite>
