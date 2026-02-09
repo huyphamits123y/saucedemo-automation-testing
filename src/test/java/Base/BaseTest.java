@@ -20,17 +20,17 @@ public class BaseTest {
     public static WebDriverWait wait;
 
     public static void setDriver(String browser){
-//        ChromeOptions chromeOptions = new ChromeOptions();
-//        chromeOptions.addArguments("--headless=new");
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless=new");
         switch (browser){
             case "chrome":
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(chromeOptions);
                 break;
             case "firefox":
                 driver = new FirefoxDriver();
                 break;
             default:
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(chromeOptions);
                 break;
 
         }
