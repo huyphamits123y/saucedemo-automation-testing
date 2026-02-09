@@ -123,6 +123,7 @@ public void reloadPage(Method method) {
     public void verifyBackToHome(){
         Assert.assertTrue(paymentPage.verifyBackToHome());
     }
+    //
     @AfterMethod
     public void takeScreenshot(ITestResult result) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss");
