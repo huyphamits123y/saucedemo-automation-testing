@@ -210,10 +210,10 @@ public class PaymentPage {
 //       submitValidInformation(firstname, lastname, postalcode);
 //        return BaseTest.getElementPresence(errorMessage).getText().contains("First Name is required");
 //    }
-public boolean isEnteredWithEmptyFirstName(String firstname, String lastname, String postalcode) throws InterruptedException {
+public boolean isEnteredWithEmptyFirstName(String firstname, String lastname, String postalcode)  {
 
     submitValidInformation(firstname, lastname, postalcode);
-//    Thread.sleep(5000);
+
     BaseTest.clickJS(BaseTest.getElement(buttonContinue));
     System.out.println("bin +++ ---" + BaseTest.getElementPresence(errorMessage).getText());
     return  BaseTest.getElementPresence(errorMessage).getText().contains("Error: First Name is required");
@@ -222,22 +222,21 @@ public boolean isEnteredWithEmptyFirstName(String firstname, String lastname, St
 
 
 
-    public boolean isEnteredWithEmptyLastName(String firstname, String lastname, String postalcode) throws InterruptedException {
+    public boolean isEnteredWithEmptyLastName(String firstname, String lastname, String postalcode) {
         submitValidInformation(firstname, lastname, postalcode);
-        Thread.sleep(2000);
+
         BaseTest.clickJS(BaseTest.getElement(buttonContinue));
         System.out.println("bin +++ " + BaseTest.getElementPresence(errorMessage).getText());
         return BaseTest.getElementPresence(errorMessage).getText().contains("Last Name is required");
     }
-    public boolean isEnteredWithEmptyPostalCode(String firstname, String lastname, String postalcode) throws InterruptedException {
+    public boolean isEnteredWithEmptyPostalCode(String firstname, String lastname, String postalcode)  {
         submitValidInformation(firstname, lastname, postalcode);
-        Thread.sleep(2000);
         BaseTest.clickJS(BaseTest.getElement(buttonContinue));
         return BaseTest.getElementPresence(errorMessage).getText().contains("Error: Postal Code is required");
     }
-    public boolean isEnteredSuccessfully(String firstname, String lastname, String postalcode) throws InterruptedException {
+    public boolean isEnteredSuccessfully(String firstname, String lastname, String postalcode) {
         submitValidInformation(firstname, lastname, postalcode);
-        Thread.sleep(2000);
+
         BaseTest.click(buttonContinue);
         BaseTest.waitForUrl("https://www.saucedemo.com/checkout-step-two.html");
         System.out.println(driver.getCurrentUrl());

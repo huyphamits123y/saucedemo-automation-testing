@@ -55,12 +55,12 @@ public class CartPage {
             nameProduct += "-" + a;
 
         }
-        System.out.println(nameProduct);
+        System.out.println("//button[@id=" + nameProduct + "'] ");
 
         return By.xpath(" //button[@id='" + nameProduct + "'] ");
     }
 
-    public void removeProduct(String name) {
+    public void removeProduct(String name)  {
         if (HomePage.nameproductAdd.contains(name)) {
             HomePage.nameproductAdd.remove(name);
         }
@@ -68,9 +68,13 @@ public class CartPage {
         if (HomePage.nameproductAdd.size() != 0){
             HomePage.nameproductAdd.forEach(i -> System.out.println(" name product con lai " + i));
         }
-        BaseTest.getElement(buttonRemoveProduct(name)).click();
+//        BaseTest.getElement(buttonRemoveProduct(name)).click();
+
+//        BaseTest.getElementPresence(buttonRemoveProduct(name)).click();
+        BaseTest.clickJS(BaseTest.getElementPresence(buttonRemoveProduct(name)));
+
     }
-    public boolean isRemoveProductSuccess(String name) {
+    public boolean isRemoveProductSuccess(String name)  {
         int totalInitial;
         int totalChanged;
         totalInitial = Integer.valueOf(BaseTest.getElement(total).getText());
@@ -79,6 +83,7 @@ public class CartPage {
         try {
 //            totalChanged = Integer.valueOf(BaseTest.getElement(total).getText());
             totalChanged = Integer.valueOf(BaseTest.getElementPresence(total).getText());
+            System.out.println("total change" + totalChanged);
         } catch (Exception e) {
             totalChanged = 0;
         }

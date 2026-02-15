@@ -90,20 +90,20 @@ public void reloadPage(Method method) {
         Assert.assertTrue(BaseTest.driver.getCurrentUrl().contains("https://www.saucedemo.com/checkout-step-one.html"));
     }
     @Test(priority = 2)
-    public void isEnteredWithEmptyFirstName() throws InterruptedException {
+    public void isEnteredWithEmptyFirstName(){
         Assert.assertTrue(paymentPage.isEnteredWithEmptyFirstName("", "a", "a"));
     }
     @Test(priority = 3)
-    public void isEnteredWithEmptyLastName() throws InterruptedException {
+    public void isEnteredWithEmptyLastName() {
         System.out.println("peg" + BaseTest.driver.getCurrentUrl());
         Assert.assertTrue(paymentPage.isEnteredWithEmptyLastName("a", "", "a"));
     }
     @Test(priority = 4)
-    public void isEnteredWithEmptyPostTalCode() throws InterruptedException {
+    public void isEnteredWithEmptyPostTalCode()  {
         Assert.assertTrue(paymentPage.isEnteredWithEmptyPostalCode("a", "a", ""));
     }
     @Test(priority = 5)
-    public void isEnteredSuccessfully() throws InterruptedException {
+    public void isEnteredSuccessfully()  {
         Assert.assertTrue(paymentPage.isEnteredSuccessfully("aa", "aa", "aa"));
     }
     @Test(priority = 6)

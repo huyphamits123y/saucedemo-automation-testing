@@ -52,7 +52,7 @@ public class CartTest {
 
 
     @Test(priority = 3)
-    public void removeProductSuccessfully(){
+    public void removeProductSuccessfully()  {
 
         Assert.assertTrue(cartPage.isRemoveProductSuccess("Sauce Labs Backpack"));
 

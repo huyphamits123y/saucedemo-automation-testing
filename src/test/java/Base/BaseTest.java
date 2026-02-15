@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,26 +20,79 @@ public class BaseTest {
     public static WebDriver driver;
     public static WebDriverWait wait;
 
-    public static void setDriver(String browser){
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless=new");
-        switch (browser){
-            case "chrome":
-                driver = new ChromeDriver(chromeOptions);
-                break;
-            case "firefox":
-                driver = new FirefoxDriver();
-                break;
-            default:
-                driver = new ChromeDriver(chromeOptions);
-                break;
+//    public static void setDriver(String browser){
+////        ChromeOptions chromeOptions = new ChromeOptions();
+////        chromeOptions.addArguments("--headless=new");
+//
+//
+//
+//        switch (browser){
+//            case "chrome":
+//                driver = new ChromeDriver();
+//                break;
+//            case "firefox":
+//                driver = new FirefoxDriver();
+//                break;
+//            default:
+//                driver = new ChromeDriver();
+//                break;
+//
+//        }
+//        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+//        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // có chức năng chờ trang load trong 30s nếu vượt quá thì fail
+//        driver.manage().window().maximize();;
+//
+//    }
 
-        }
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30)); // có chức năng chờ trang load trong 30s nếu vượt quá thì fail
-        driver.manage().window().maximize();;
 
+public static void setDriver(String browser){
+
+    ChromeOptions options = new ChromeOptions();
+
+    Map<String, Object> prefs = new HashMap<>();
+
+    // Tắt password manager
+    prefs.put("credentials_enable_service", false);
+    prefs.put("profile.password_manager_enabled", false);
+
+    // Tắt leak detection
+    prefs.put("profile.password_manager_leak_detection", false);
+
+    // Tắt Safe Browsing
+    prefs.put("safebrowsing.enabled", false);
+
+    options.setExperimentalOption("prefs", prefs);
+
+    options.addArguments("--headless=new");
+    // Ẩn automation info bar
+    options.setExperimentalOption("excludeSwitches",
+            Arrays.asList("enable-automation"));
+
+
+    options.addArguments("--disable-notifications");
+    options.addArguments("--incognito");  // QUAN TRỌNG
+    options.addArguments("--disable-infobars");
+    options.addArguments("--disable-save-password-bubble");
+
+    switch (browser){
+        case "chrome":
+            driver = new ChromeDriver(options);
+            break;
+        case "firefox":
+            driver = new FirefoxDriver();
+            break;
+        default:
+            driver = new ChromeDriver(options);
+            break;
     }
+
+    wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+    driver.manage().window().maximize();
+}
+
+
+
 //    public static WebDriver setChromeDriver(String url) {
 //        ChromeOptions options = new ChromeOptions();
 //
